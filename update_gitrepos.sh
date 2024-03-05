@@ -1,13 +1,13 @@
 #!/bin/bash
 
-### This script pulls the current state from main branch for each git repository located in specific directory.
+### This script pulls the current state from main branches for each git repository located in specific directory.
 
 declare -r REPOS_DIR="/home/ekrem/Documents/gitrepos"
 declare -r GREEN='\033[0;32m'
 declare -r NOCOLOR='\033[0m'
 
 for dir in "${REPOS_DIR}"/*; do
-  if [ -d "${dir}" ]; then
+  if [ -d "${dir}/.git" ]; then
     repo_name="${GREEN}$(basename "${dir}")${NOCOLOR}"
 
     echo ""
